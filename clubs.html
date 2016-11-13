@@ -1,0 +1,382 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<style>
+
+			.col {
+				margin-top: 70px;
+				height: 100%;
+				overflow: scroll;
+			}
+
+			nav {
+				background-color: #000;
+				/*margin:0px 30px 0px 30px;*/
+			}
+
+			img.logo {
+				height: 60px;
+				width: 45px;
+				padding: 0px 0px 5px 7px;
+				margin-left:15px;
+				margin-top: 0px;
+			}
+
+			.nav-div h2 {
+				display: inline-block;
+				padding: 17px 10px 0px 20px;
+				margin:0px;
+				color:#fff;
+				font-weight:100;
+				letter-spacing: 3px;
+				font-size:30px;
+				font-variant:small-caps;
+			}
+
+			.sidebar h2 {
+				font-weight:300;
+				letter-spacing: 3px;
+				font-size:26px;
+				font-variant:small-caps;
+			}
+
+			.cont-right {
+				float: right;
+				font-size: 20px;
+				padding-top:20px;
+				padding-right:30px;
+				text-transform: uppercase;
+				font-weight: 100;
+				letter-spacing: 3px;
+				color:#fff;
+			}
+
+			.nav-div {
+				display:inline-block;
+				color:#ddd;
+			}
+
+			.nav-div a {
+				color:#ccc;
+			}
+
+			.nav-div a:hover {
+				text-decoration: none;
+				color:#fff;
+			}
+
+			a.login {
+				border: 1px solid #FF8F00;
+				padding:10px 15px 10px 15px;
+				margin-left:10px;
+				color: #FF8F00;
+				text-transform: uppercase;
+			}
+
+
+			a.login:hover {
+				background-color: #FF8F00;
+				color:#000;
+				text-decoration: none;
+			}
+
+			.sidebar {
+				background-color:#eee;
+				border-right: 1px #ddd solid;
+			}
+
+			.buttonClass { 
+        		display:block;
+	        }
+
+	        .inline {
+	        	display:inline-block;
+	        }
+
+	        .block {
+	        	display: block;
+	        	border:none;
+	        }
+
+	        #search, #typebut, #tryout, #time, #testButton, #gender {
+	        	margin-top: 20px;
+	        }
+
+	        #typebut {
+	        	width:100%;
+	        	height:34px;
+	        	color:#000;
+	        	font-variant:small-caps;
+	        	font-size:16px;
+	        	letter-spacing: 1px;
+	        	margin-top: 20px;
+	        }
+
+
+	        #typebut span {
+	        	float:right;
+	        	padding-top: 3px;
+	        }
+
+	        #testButton {
+	        	width:100%;
+	        	height:37px; 
+	        	font-variant:small-caps;
+	        	font-size:18px;
+	        	letter-spacing: 1px; 
+	        	background-color:#FF8F00;
+	        	margin-top: 20px;
+	        }
+
+	        p.descr {
+				padding: 10px 0px 0px 215px;
+				/*font-weight:200;*/
+			}
+
+			h1.clubName {
+				letter-spacing: 3px;
+				font-variant: small-caps;
+				font-weight: 100;
+			}
+
+			h2.factsHeader {
+				margin-top: 75px;
+				font-size: 22px;
+				font-weight: 100;
+				letter-spacing: 2px;
+			}
+
+			.factsDiv p {
+				margin-top:3px;
+				margin-bottom: 0px;
+			}
+
+			.module {
+				border-top: 1px solid #ddd;
+				overflow: hidden;
+				padding-bottom: 30px;
+			}
+
+			option.center {
+				text-align: center;
+				color:#666;
+			}
+
+			#noClub {
+				font-size:20px;
+				margin:100px 80px 0px 80px;
+				text-align: center;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<nav class="navbar-fixed-top">
+			<div class="nav-div">
+				<a href="index.html">
+					<img class="logo" src="logoBlack.gif">
+					<h2>PrincetonClubs</h2>
+				</a>
+			</div>
+			<div class="nav-div cont-right">
+				<a>About</a>
+				<a class="login">Login</a>
+			</div>
+		</nav>
+
+		<div class="col-sm-3 col sidebar">
+			<div>
+				<h2>Refine Your Search</h2>
+				<input id="search" type="text" class="form-control" placeholder="Search for...">
+
+				<button id="typebut" type="button" class="btn btn-default btn-sm buttonClass" data-toggle="collapse" data-target="#type" >Activity Type  
+					<span id="plusMinus" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				</button>
+		    	<div id="type" class="collapse">
+					<div class="input-group" id="actType">
+				    	<span class="input-group-addon block">
+					    	<input type="checkbox" name="act" value="acappella">
+					    	<span>A Capella</span>
+						</span>
+						<span class="input-group-addon block">
+					    	<input type="checkbox" name="act" value="key2">
+					    	<span>key2</span>
+						</span>
+			    	</div><!-- /input-group -->
+		    	</div>
+			   
+	    		
+				<select class="form-control" id="time">
+					<option class="center" value="">Time per week</option>
+		        	<option value="t01">0-1 hours/week</option>
+		        	<option value="t24">2-3 hours/week</option>
+		        	<option value="t46">4-5 hours/week</option>
+		        	<option value="t6plus">6+ hours/week</option>
+	      		</select>		
+
+		    	
+	      		<select class="form-control" id="tryout">
+	      			<option class="center" value="">Tryout</option>
+		        	<option value="tryYes">Yes</option>
+		        	<option value="tryNo">No</option>
+	      		</select>
+
+	      		
+	      		<select class="form-control" id="gender">
+	      			<option class="center" value="">Gender</option>
+	      			<option value="coed">Co-ed</option>
+	      			<option value="maleOnly">Male only</option>
+		        	<option value="femaleOnly">Female only</option>
+		        	
+	      		</select>
+  				
+			</div>
+
+			<button type="button" class="btn btn-default btn-md" id="testButton">
+  				Search
+			</button>
+
+		</div>
+
+		<div class="col-sm-9 col">
+
+			<div class="module acappella t6plus tryYes maleOnly">
+				<div class="col-sm-8">
+					<h1 class="clubName">Footnotes</h1>
+					<img src="FootnotesImage.jpg" alt="Footnotes Singing" align="left" style="width:200px;height:200px;">
+					<p class = "descr">Founded by a group of fun-loving, charismatic, and talented young men in 1959, the Princeton Footnotes have been providing fresh, all-male a cappella to Princeton University and far beyond for more than half a century. We are an incredibly versatile group of guys who bring a radiant enthusiasm to our singing. Having performed all over the world for the past 55 years, our repertoire spans decades of music and an astounding variety of genres: from Frank Sinatra to Taylor Swift to Phish.</p>
+				</div>
+				<div class="col-sm-4 factsDiv">
+					<h2 class = "factsHeader">Quick Facts</h2>
+					<p><strong>Type:</strong> A Capella</p>
+					<p><strong>Time:</strong> 6+ hours/week</p>
+					<p><strong>Experience:</strong> Recommended</p>
+					<p><strong>Meeting times:</strong> Weekday nights</p>
+					<p><strong>Gender :</strong> Weekday nights</p>
+					<p><strong>Contacts:</strong> Person1, person2</p>
+				</div>
+			</div>
+
+			<div class="module acappella t6plus">
+				<div class="col-sm-8">
+					<h1 class="clubName">Tiger Lillies</h1>
+					<img src="FootnotesImage.jpg" alt="Footnotes Singing" align="left" style="width:200px;height:200px;">
+					<p class = "descr">Founded by a group of fun-loving, charismatic, and talented young men in 1959, the Princeton Footnotes have been providing fresh, all-male a cappella to Princeton University and far beyond for more than half a century. We are an incredibly versatile group of guys who bring a radiant enthusiasm to our singing. Having performed all over the world for the past 55 years, our repertoire spans decades of music and an astounding variety of genres: from Frank Sinatra to Taylor Swift to Phish.</p>
+				</div>
+				<div class="col-sm-4 factsDiv">
+					<h2 class = "factsHeader">Quick Facts</h2>
+					<p><strong>Type:</strong> A Capella</p>
+					<p><strong>Time:</strong> 6+ hours/week</p>
+					<p><strong>Experience:</strong> Recommended</p>
+					<p><strong>Meeting times:</strong> Weekday nights</p>
+					<p><strong>Contacts:</strong> Person1, person2</p>
+				</div>
+			</div>
+
+			<div class="module acappella">
+				<div class="col-sm-8">
+					<h1 class="clubName">PDP</h1>
+					<img src="FootnotesImage.jpg" alt="Footnotes Singing" align="left" style="width:200px;height:200px;">
+					<p class = "descr">Founded by a group of fun-loving, charismatic, and talented young men in 1959, the Princeton Footnotes have been providing fresh, all-male a cappella to Princeton University and far beyond for more than half a century. We are an incredibly versatile group of guys who bring a radiant enthusiasm to our singing. Having performed all over the world for the past 55 years, our repertoire spans decades of music and an astounding variety of genres: from Frank Sinatra to Taylor Swift to Phish.</p>
+				</div>
+				<div class="col-sm-4 factsDiv">
+					<h2 class = "factsHeader">Quick Facts</h2>
+					<p><strong>Type:</strong> A Capella</p>
+					<p><strong>Time:</strong> 6+ hours/week</p>
+					<p><strong>Experience:</strong> Recommended</p>
+					<p><strong>Meeting times:</strong> Weekday nights</p>
+					<p><strong>Contacts:</strong> Person1, person2</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+
+		
+
+		$('#testButton').click(function (e){
+
+			$('#noClub').remove();
+
+			var keys = [];
+			var cats = [];
+			var search = $('#search').val();
+			keys.push(search);
+
+
+			$('input[name=act]:checked', '#actType').each(function(e) {
+				cats.push($(this).val());
+			});
+
+			keys.push($('#time').find(":selected").attr('value'));
+			keys.push($('#tryout').find(":selected").attr('value'));
+			keys.push($('#gender').find(":selected").attr('value'));
+
+			var count = 0;
+			var hide = 0;
+
+			$('.module').each(function (e) {
+
+				$(this).show();
+				var classes = $(this).attr('class');
+				var text = $(this).find('h1').text().toLowerCase();
+				classes += " " + text;
+				var contains = true;
+				for (i = 0; i < keys.length; i++) {
+					if (classes.indexOf(keys[i]) < 0)
+						contains = false;
+				}
+
+				var catBool = false;
+
+				for (i = 0; i < cats.length; i++) {
+					if (classes.indexOf(cats[i]) >= 0)
+						catBool = true;
+				}
+
+				if (cats.length == 0) 
+					catBool = true;
+
+				// console.log(catBool);
+				if (!contains || !catBool) {
+					$(this).hide();
+					hide++;
+				}
+				count++;
+			});
+
+			if (count == hide) {
+				console.log("loop");
+				$('.col-sm-9').append("<p id='noClub'>We don't currently have a club meeting your criteria, but if you are interested in creating one, please see <a href='https://www.princeton.edu/odus/activities/organizations/start/groups/' target='_blank'>this link</a> for more information on how to found a club at Princeton.</p>'");
+			}
+		});
+
+		function plusMinusToggle(id, spanclass) {
+			if (spanclass == 'glyphicon glyphicon-plus') 
+				$('#'+id).attr('class','glyphicon glyphicon-minus');
+			else 
+				$('#'+id).attr('class','glyphicon glyphicon-plus');
+		}
+		
+		$('.buttonClass').click(function(e) {
+			var plus = $(this).attr('class');
+			var spanClass = $(this).find('span').attr('class');
+			var spanId = $(this).find('span').attr('id');
+			//console.log(span);
+			plusMinusToggle(spanId, spanClass);
+		})
+
+		</script>
+	</body>
+</html>
